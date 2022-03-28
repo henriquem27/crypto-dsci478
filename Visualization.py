@@ -58,12 +58,14 @@ class TradingGraph:
                     if trade[0]=='buy':
                         clr = 'red'
                         splot.plot(trade[1], trade[2], 'ro')
+                        splot.hlines(trade[2], current_step-lbw, current_step, linestyle='dashed', colors=[clr])
                     else:
                         clr = 'green'
                         splot.plot(trade[1], trade[2], 'go')
+                        splot.hlines(trade[2], current_step-lbw, current_step, linestyle='dashed', colors=[clr])
                 
                 #the plotted dot won't appear after the look back window is passed so a horizontal line keeps tracks at any time
-                splot.hlines(trade[2], current_step-lbw, current_step, linestyle='dashed', colors=[clr])
+
 
     def render(self, current_step, window_size, trades):
         self.render_prices(current_step, window_size)
@@ -83,4 +85,5 @@ class TradingGraph:
     
     
     
-    
+
+#%%

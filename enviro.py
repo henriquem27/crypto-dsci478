@@ -12,7 +12,7 @@ tf.compat.v1.enable_v2_behavior()
 
     
 class CryptoTradingEnv(py_environment.PyEnvironment):
-    def __init__(self, fee = 0.001, starting_date = "1/1/2020", initial_balance = 10000, look_back_window = 40):
+    def __init__(self, fee = 0.001, starting_date = "2020-01-01", initial_balance = 10000, look_back_window = 40):
         '''initialize the action spec and observation spec, 
            the two main components of agent will need to navigate the environment'''
         self._action_spec = array_spec.BoundedArraySpec(
